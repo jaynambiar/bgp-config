@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BGP Config</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">BGP </a></li>
+    <li><a href="#tabs-3">IPv6 POP1</a></li>
+    <li><a href="#tabs-4">IPv6 POP2</a></li>
+  </ul>
+  <div id="tabs-1">
+    <h4>customer BGP Config</h4>
+
+<form action="bgp-new.php" method="post">
+
+
+
+Enter ISP Side WAN IP: <input name="wanip" type="text"/>
+<br>
+<br>
+Enter Customer Side WAN IP: <input name="bgpnbr" type="text"/>
+<br>
+<br>
+
+Enter LAN IP Range/mask: <input name="lanip" type="text"/>
+<br>
+<br>
+Customer Name Short(No spaces): <input name="desc" type="text"/>
+<br>
+<br>
+Description:<input name="desc_long" type="text"/>
+
+
+<input type="submit" value="Submit" />
+</form>
+</body>
+  </div>
+  <div id="tabs-3">
+  <h4>IPv6-BGP-POP1-Config</h4>
+
+<form action="bgp6.php" method="post">
+
+Interface:
+<select name="int">
+<option>ge-1/0/2</option>
+<option>ge-1/1/0</option>
+<option>ge-1/0/3</option>
+</select>
+
+<br>
+
+VLAN ID:<input name="vlan" type="text"/>
+<br>
+Enter WAN IP Address/mask(/126):<input name="wanip" type="text"/>
+Enter LAN IP Range/mask:<input name="lanip" type="text"/>
+<br>
+Enter BGP Neighbor IP Address(without mask):<input name="bgpnbr" type="text"/>
+<br>
+Enter BGP AS Number:<input name="asnum" type="text"/>
+<br>
+Customer Name Short(No spaces):<input name="desc" type="text"/>
+	<br>
+Description:<input name="desc_long" type="text"/>
+
+
+<input type="submit" value="Submit" />
+</form>
+</body>
+ </div>
+
+<div id="tabs-4">
+  <h4>IPv6-BGP-POP2-Config</h4>
+
+<form action="bgp6.php" method="post">
+
+Interface:
+<select name="int">
+<option>ge-0/0/2</option>
+<option>ge-0/0/3</option>
+</select>
+
+<br>
+
+VLAN ID:<input name="vlan" type="text"/>
+<br>
+Enter WAN IP Address/mask(/126):<input name="wanip" type="text"/>
+Enter LAN IP Range/mask:<input name="lanip" type="text"/>
+<br>
+Enter BGP Neighbor IP Address(without mask):<input name="bgpnbr" type="text"/>
+<br>
+Enter BGP AS Number:<input name="asnum" type="text"/>
+<br>
+Customer Name Short(No spaces):<input name="desc" type="text"/>
+        <br>
+Description:<input name="desc_long" type="text"/>
+
+
+<input type="submit" value="Submit" />
+</form>
+</body>
+ </div>
+
+</div>
+ 
+ 
+</body>
+</html>
